@@ -1,5 +1,5 @@
 name: Afiliate
-description: Learn the basics of using Material Components by building a simple app with core components.
+description: ecommerce app.
 
 dependencies:
   flutter:
@@ -9,6 +9,7 @@ dependencies:
   cupertino_icons: ^0.1.0
   shrine_images: 1.0.0
   carousel_pro: ^0.0.13
+  cached_network_image: ^0.4.1+1
 
 dev_dependencies:
   flutter_test:

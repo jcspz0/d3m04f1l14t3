@@ -14,15 +14,17 @@
 
 import 'package:flutter/material.dart';
 
-import 'home.dart';
-import 'login.dart';
+import 'package:Afiliate/screen/home.dart';
+import 'package:Afiliate/screen/information.dart';
+import 'package:Afiliate/screen/login.dart';
+import 'package:Afiliate/screen/detail.dart';
 
 class AfiliateApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Afiliate',
-      home: HomePage(),
+      home: new HomePage(),
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
     );
@@ -39,8 +41,30 @@ class AfiliateApp extends StatelessWidget {
           );
         }
 
+      case '/information':
+        {
+          return MaterialPageRoute<void>(
+            settings: settings,
+            builder: (BuildContext context) => Information(),
+            fullscreenDialog: true,
+          );
+        }
+
+      case '/detail':
+        {
+          return MaterialPageRoute<void>(
+            settings: settings,
+            builder: (BuildContext context) => DetailPage(),
+            fullscreenDialog: true,
+          );
+        }
+
       default:
-        return null;
+        return MaterialPageRoute<void>(
+          settings: settings,
+          builder: (BuildContext context) => HomePage(),
+          fullscreenDialog: true,
+        );
     }
   }
 }
